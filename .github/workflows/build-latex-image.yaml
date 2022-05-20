@@ -6,6 +6,8 @@ on:
       - 'main'
     paths:
      - 'latex/**'
+  schedule:
+    - cron: "0 0 * * 1"
 
 jobs:
   docker:
