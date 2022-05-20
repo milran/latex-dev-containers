@@ -32,11 +32,11 @@ target "ubuntu-22-04" {
 }
 
 target "ubuntu-20-04" {
-  inherits = ["base", "docker-meta-ubuntu-22-04"]
+  inherits = ["base", "docker-meta-ubuntu-20-04"]
   args = { VARIANT = "ubuntu-20.04" }
 }
 
 target "ubuntu-18-04" {
-  inherits = ["base", "docker-meta-ubuntu-22-04"]
+  inherits = ["base", "docker-meta-ubuntu-18-04"]
   args = { VARIANT = "ubuntu-18.04" }
 }
