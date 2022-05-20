@@ -44,7 +44,7 @@ jobs:
             prefix=0-debian-10-
       -
         name: Docker meta (ubuntu-22.04)
-        id: meta-ubuntu-22.04
+        id: meta-ubuntu-22-04
         uses: docker/metadata-action@v4
         with:
           images: milran/latex-dev-container
@@ -57,7 +57,7 @@ jobs:
             prefix=0-ubuntu-22.04-
       -
         name: Docker meta (ubuntu-20.04)
-        id: meta-ubuntu-20.04
+        id: meta-ubuntu-20-04
         uses: docker/metadata-action@v4
         with:
           images: milran/latex-dev-container
@@ -70,7 +70,7 @@ jobs:
             prefix=0-ubuntu-20.04-
       -
         name: Docker meta (ubuntu-18.04)
-        id: meta-ubuntu-18.04
+        id: meta-ubuntu-18-04
         uses: docker/metadata-action@v4
         with:
           images: milran/latex-dev-container
@@ -86,9 +86,9 @@ jobs:
           jq -s 'reduce .[] as $j ({}; . * $j)' \
             ${{ steps.meta-debian-11.outputs.bake-file }} \
             ${{ steps.meta-debian-10.outputs.bake-file }} \
-            ${{ steps.meta-ubuntu-22.04.outputs.bake-file }} \
-            ${{ steps.meta-ubuntu-20.04.outputs.bake-file }} \
-            ${{ steps.meta-ubuntu-18.04.outputs.bake-file }} \
+            ${{ steps.meta-ubuntu-22-04.outputs.bake-file }} \
+            ${{ steps.meta-ubuntu-20-04.outputs.bake-file }} \
+            ${{ steps.meta-ubuntu-18-04.outputs.bake-file }} \
             > docker-bake.override.json
       -
         name: Set up QEMU
