@@ -26,7 +26,7 @@ jobs:
           bake-target: docker-meta-debian-11
           tags: |
             type=schedule,pattern={{date 'YYYYMMDD'}}
-            type=sha
+            type=sha,prefix=0-debian-11-
             type=raw,value=latest,enable={{is_default_branch}}
           flavor: |
             prefix=0-debian-11-
@@ -39,7 +39,7 @@ jobs:
           bake-target: docker-meta-debian-10
           tags: |
             type=schedule,pattern={{date 'YYYYMMDD'}}
-            type=sha
+            type=sha,prefix=0-debian-10-
             type=raw,value=latest,enable={{is_default_branch}}
           flavor: |
             prefix=0-debian-10-
@@ -52,7 +52,7 @@ jobs:
           bake-target: docker-meta-ubuntu-22-04
           tags: |
             type=schedule,pattern={{date 'YYYYMMDD'}}
-            type=sha
+            type=sha,prefix=0-ubuntu-22.04-
             type=raw,value=latest,enable={{is_default_branch}}
           flavor: |
             prefix=0-ubuntu-22.04-
@@ -65,7 +65,7 @@ jobs:
           bake-target: docker-meta-ubuntu-20-04
           tags: |
             type=schedule,pattern={{date 'YYYYMMDD'}}
-            type=sha
+            type=sha,prefix=0-ubuntu-20.04-
             type=raw,value=latest,enable={{is_default_branch}}
           flavor: |
             prefix=0-ubuntu-20.04-
@@ -78,7 +78,7 @@ jobs:
           bake-target: docker-meta-ubuntu-18-04
           tags: |
             type=schedule,pattern={{date 'YYYYMMDD'}}
-            type=sha
+            type=sha,prefix=0-ubuntu-18.04-
             type=raw,value=latest,enable={{is_default_branch}}
           flavor: |
             prefix=0-ubuntu-18.04-
