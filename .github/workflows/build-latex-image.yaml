@@ -49,7 +49,7 @@ jobs:
         uses: docker/metadata-action@v4
         with:
           images: milran/latex-dev-container
-          bake-target: docker-meta-ubuntu-22.04
+          bake-target: docker-meta-ubuntu-22-04
           tags: |
             type=schedule,pattern={{date 'YYYYMMDD'}}
             type=sha
@@ -62,7 +62,7 @@ jobs:
         uses: docker/metadata-action@v4
         with:
           images: milran/latex-dev-container
-          bake-target: docker-meta-ubuntu-20.04
+          bake-target: docker-meta-ubuntu-20-04
           tags: |
             type=schedule,pattern={{date 'YYYYMMDD'}}
             type=sha
@@ -75,7 +75,7 @@ jobs:
         uses: docker/metadata-action@v4
         with:
           images: milran/latex-dev-container
-          bake-target: docker-meta-ubuntu-18.04
+          bake-target: docker-meta-ubuntu-18-04
           tags: |
             type=schedule,pattern={{date 'YYYYMMDD'}}
             type=sha
