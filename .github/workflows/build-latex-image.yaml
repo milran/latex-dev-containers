@@ -6,6 +6,7 @@ on:
       - 'main'
     paths:
      - 'latex/**'
+     - '.github/workflows/build-latex-image.yaml'
   schedule:
     - cron: "0 0 * * 1"
 
