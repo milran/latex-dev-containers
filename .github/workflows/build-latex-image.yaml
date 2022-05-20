@@ -83,13 +83,13 @@ jobs:
             prefix=0-ubuntu-18.04-
       - name: Merge buildx bake files
         run: |
-            jq -s 'reduce .[] as $j ({}; . * $j)' \
-              ${{ steps.meta-debian-11.outputs.bake-file }} \
-              ${{ steps.meta-debian-10.outputs.bake-file }} \
-              ${{ steps.meta-ubuntu-22.04.outputs.bake-file }} \
-              ${{ steps.meta-ubuntu-20.04.outputs.bake-file }} \
-              ${{ steps.meta-ubuntu-18.04.outputs.bake-file }} \
-              > docker-bake.override.json
+          jq -s 'reduce .[] as $j ({}; . * $j)' \
+            ${{ steps.meta-debian-11.outputs.bake-file }} \
+            ${{ steps.meta-debian-10.outputs.bake-file }} \
+            ${{ steps.meta-ubuntu-22.04.outputs.bake-file }} \
+            ${{ steps.meta-ubuntu-20.04.outputs.bake-file }} \
+            ${{ steps.meta-ubuntu-18.04.outputs.bake-file }} \
+            > docker-bake.override.json
       -
         name: Set up QEMU
         uses: docker/setup-qemu-action@v2
