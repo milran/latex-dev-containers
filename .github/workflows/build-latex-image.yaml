@@ -25,11 +25,9 @@ jobs:
           images: milran/latex-dev-container
           bake-target: docker-meta-debian-11
           tags: |
-            type=schedule,pattern={{date 'YYYYMMDD'}}
+            type=schedule,pattern={{date 'YYYYMMDD'}},prefix=0-debian-11-
             type=sha,prefix=0-debian-11-
-            type=raw,value=latest,enable={{is_default_branch}}
-          flavor: |
-            prefix=0-debian-11-
+            type=raw,value=0-debian-11,enable={{is_default_branch}}
       -
         name: Docker meta (debian-10)
         id: meta-debian-10
@@ -38,11 +36,9 @@ jobs:
           images: milran/latex-dev-container
           bake-target: docker-meta-debian-10
           tags: |
-            type=schedule,pattern={{date 'YYYYMMDD'}}
+            type=schedule,pattern={{date 'YYYYMMDD'}},prefix=0-debian-10-
             type=sha,prefix=0-debian-10-
-            type=raw,value=latest,enable={{is_default_branch}}
-          flavor: |
-            prefix=0-debian-10-
+            type=raw,value=0-debian-10,enable={{is_default_branch}}
       -
         name: Docker meta (ubuntu-22.04)
         id: meta-ubuntu-22-04
@@ -51,11 +47,9 @@ jobs:
           images: milran/latex-dev-container
           bake-target: docker-meta-ubuntu-22-04
           tags: |
-            type=schedule,pattern={{date 'YYYYMMDD'}}
+            type=schedule,pattern={{date 'YYYYMMDD'}},prefix=0-ubuntu-22.04-
             type=sha,prefix=0-ubuntu-22.04-
-            type=raw,value=latest,enable={{is_default_branch}}
-          flavor: |
-            prefix=0-ubuntu-22.04-
+            type=raw,value=0-ubuntu-22.04,enable={{is_default_branch}}
       -
         name: Docker meta (ubuntu-20.04)
         id: meta-ubuntu-20-04
@@ -64,11 +58,9 @@ jobs:
           images: milran/latex-dev-container
           bake-target: docker-meta-ubuntu-20-04
           tags: |
-            type=schedule,pattern={{date 'YYYYMMDD'}}
+            type=schedule,pattern={{date 'YYYYMMDD'}},prefix=0-ubuntu-20.04-
             type=sha,prefix=0-ubuntu-20.04-
-            type=raw,value=latest,enable={{is_default_branch}}
-          flavor: |
-            prefix=0-ubuntu-20.04-
+            type=raw,value=0-ubuntu-20.04,enable={{is_default_branch}}
       -
         name: Docker meta (ubuntu-18.04)
         id: meta-ubuntu-18-04
@@ -77,11 +69,9 @@ jobs:
           images: milran/latex-dev-container
           bake-target: docker-meta-ubuntu-18-04
           tags: |
-            type=schedule,pattern={{date 'YYYYMMDD'}}
+            type=schedule,pattern={{date 'YYYYMMDD'}},prefix=0-ubuntu-18.04-
             type=sha,prefix=0-ubuntu-18.04-
-            type=raw,value=latest,enable={{is_default_branch}}
-          flavor: |
-            prefix=0-ubuntu-18.04-
+            type=raw,value=0-ubuntu-18.04,enable={{is_default_branch}}
       - name: Merge buildx bake files
         run: |
           jq -s 'reduce .[] as $j ({}; . * $j)' \
