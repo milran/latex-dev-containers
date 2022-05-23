@@ -8,7 +8,7 @@ on:
      - 'latex-ja/**'
      - '.github/workflows/build-latex-ja-image.yaml'
   schedule:
-    - cron: "0 0 * * 1"
+    - cron: "0 0 1 * *"
 
 jobs:
   docker:
